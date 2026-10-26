@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRONCORE FITNESS | Equipamiento y Nutrición Premium</title>
+    <!-- Fuentes e Íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">IRONCORE<span>FITNESS</span></div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-btn" id="cartOpenBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Comercial -->
+    <header class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">NUEVA COLECCIÓN 2026</span>
+            <h1>SUDOR, HIERRO Y<br><span class="highlight">DISCIPLINA</span></h1>
+            <p>El dolor que sientes hoy será la fuerza que sentirás mañana. Forja tu mejor versión con equipamiento de grado profesional y nutrición deportiva de máxima pureza.</p>
+            <div class="hero-buttons">
+                <a href="#catalogo" class="btn btn-primary">Explorar Catálogo <i class="fas fa-arrow-right"></i></a>
+                <a href="#promociones" class="btn btn-secondary">Ver Ofertas</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bloques de Categorías Visuales -->
+    <section class="category-showcase" id="categorias">
+        <div class="container">
+            <div class="section-title">
+                <h2>SECTORES DE <span class="highlight">ENTRENAMIENTO</span></h2>
+                <p>Encuentra exactamente lo que tu rutina exige.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-card" onclick="app.filterByCategory('Suplementos deportivos')">
+                    <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=800&q=80" alt="Suplementos">
+                    <div class="showcase-content">
+                        <h3>Suplementos</h3>
+                        <span class="btn-link">Ver productos <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                <div class="showcase-card" onclick="app.filterByCategory('Pesas y accesorios')">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80" alt="Pesas y Accesorios">
+                    <div class="showcase-content">
+                        <h3>Pesas y Accesorios</h3>
+                        <span class="btn-link">Ver productos <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                <div class="showcase-card" onclick="app.filterByCategory('Máquinas y equipamiento')">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Máquinas">
+                    <div class="showcase-content">
+                        <h3>Máquinas</h3>
+                        <span class="btn-link">Ver productos <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Promociones Destacadas -->
+    <section class="promotions-section" id="promociones">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>OFERTAS <span class="highlight">LIMITADAS</span></h2>
+            </div>
+            <div class="promo-grid" id="promoContainer">
+                <!-- Se inyecta vía JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo Completo -->
+    <section class="catalog-section" id="catalogo">
+        <div class="container">
+            <div class="catalog-header">
+                <h2>NUESTRO <span class="highlight">INVENTARIO</span></h2>
+                <div class="catalog-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar proteína, polea, mancuernas...">
+                    </div>
+                    <select id="categoryFilter">
+                        <option value="Todos">Todas las categorías</option>
+                        <option value="Suplementos deportivos">Suplementos deportivos</option>
+                        <option value="Pesas y accesorios">Pesas y accesorios</option>
+                        <option value="Máquinas y equipamiento">Máquinas y equipamiento</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid" id="productContainer">
+                <!-- Se inyecta vía JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto / Simulación -->
+    <section class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>SOPORTE Y <span class="highlight">ASESORÍA</span></h2>
+                <p>¿Necesitas equipar tu gimnasio comercial o armar tu home gym? Contáctanos para cotizaciones mayoristas o dudas técnicas.</p>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Pereira & Dosquebradas, Colombia</li>
+                    <li><i class="fas fa-envelope"></i> ventas@ironcorefitness.com</li>
+                </ul>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>IRONCORE<span>FITNESS</span></h3>
+                <p>Proyecto de demostración comercial. Cero excusas, solo inercia.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IRONCORE FITNESS. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Carrito Lateral (Offcanvas) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> TU CARRITO</h3>
+            <button class="close-cart" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Se inyecta vía JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <span>Subtotal:</span>
+                <span id="cartTotal" class="total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="alert('Esta es una demostración escolar. No se procesan pagos reales.')">PROCEDER AL PAGO</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/app.js"></script>
+</body>
+</html>
